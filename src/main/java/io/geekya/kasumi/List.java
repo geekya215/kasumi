@@ -28,10 +28,6 @@ public sealed interface List<T> {
         };
     }
 
-    static <T> List<T> append(T x, List<T> list) {
-        return concat(singleton(x), list);
-    }
-
     static <T> T head(List<T> list) {
         return switch (list) {
             case Nil nil -> throw new IllegalArgumentException("head called on empty list");
